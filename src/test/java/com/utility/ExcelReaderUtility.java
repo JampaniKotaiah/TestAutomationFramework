@@ -28,6 +28,7 @@ public class ExcelReaderUtility {
 		Row rows;
 		Cell firstcell;
 		Cell secoundcell;
+		Cell thirdcell;
 		Users user;
 		XSSFSheet sheet = workbook.getSheet("LoginTestData");
 		Iterator<Row> row = sheet.iterator();
@@ -37,7 +38,8 @@ public class ExcelReaderUtility {
 			rows = row.next();
 			firstcell = rows.getCell(0);
 			secoundcell = rows.getCell(1);
-			user = new Users(firstcell.toString(),secoundcell.toString());
+			thirdcell = rows.getCell(2);
+			user = new Users(firstcell.toString(),secoundcell.toString(),thirdcell.toString());
 			userList.add(user);
 
 		}
